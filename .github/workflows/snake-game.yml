@@ -1,47 +1,47 @@
-# This is a basic workflow to help you get started with Actions
+# Este é um fluxo de trabalho básico para ajudá-lo a começar com Actions
 
 name: CI
 
-# Controls when the workflow will run
+# Controles para quando o fluxo de trabalho será executado
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Aciona o fluxo de trabalho em eventos de push ou pull request, mas apenas para o branch "main"
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Permite que você execute este fluxo de trabalho manualmente na aba Actions
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Um fluxo de trabalho é composto por um ou mais jobs que podem ser executados sequencialmente ou em paralelo
 jobs:
-  # This workflow contains a single job called "build"
+  # Este fluxo de trabalho contém um único job chamado "build"
   build:
-    # The type of runner that the job will run on
+    # O tipo de runner que será utilizado para o job
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps representam uma sequência de tarefas que serão executadas como parte do job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Verifica seu repositório no $GITHUB_WORKSPACE, para que seu job possa acessá-lo
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
+      # Executa um script de uma linha usando o shell do runner
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
+      # Executa um conjunto de comandos usando o shell do runner
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
 
-# Nome da Actions:  
+      # Nome da Actions:  
 name: SnakeGame
 
 # Controlador do tempo que sera feito a atualização dos arquivos.
 on:
   schedule:
-      # Será atualizado a cada 5 horas.
+    # Será atualizado a cada 5 horas.
     - cron: "0 */5 * * *"
 
 # Regras
@@ -57,7 +57,7 @@ jobs:
       - uses: Platane/snk@master
         id: snake-gif
         with:
-          github_user_name: nomeUsuario #Seu usuario
+          github_user_name: srkain
           gif_out_path: dist/github-contribution-grid-snake.gif
           svg_out_path: dist/github-contribution-grid-snake.svg
 
